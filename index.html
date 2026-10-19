@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lost & Found — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__initial">LF</span>
+        <span class="brand__text">Lost & Found</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          Menu
+        </button>
+        <div id="nav-menu" class="nav-menu" data-open="false">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="listings.html" class="nav-link">Listings</a>
+          <a href="forum.html" class="nav-link">Forum</a>
+          <a href="calculator.html" class="nav-link">Calculator</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Community</p>
+          <h1>Lost & Found in <span class="accent">Your Area</span></h1>
+          <p class="lead">Find lost items or report something you've found. Use the links below to go to Listings or Forum pages.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="listings.html">Browse Listings</a>
+            <a class="btn btn-ghost" href="forum.html">Open Forum</a>
+          </div>
+
+          <ul class="meta">
+            <li><strong>Categories:</strong> Wallets • Gadgets • Belongings</li>
+            <li><strong>Local:</strong> Community-driven demo</li>
+          </ul>
+        </div>
+
+        <div class="hero-card" aria-label="Quick info">
+          <h2 class="hero-card__title">Welcome</h2>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__value">Client-side</div>
+              <div class="stat__label">Data stored in browser (localStorage)</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">No backend</div>
+              <div class="stat__label">This is a demo — add a server for production</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="section-subtitle">This demo stores data locally. For a production site add a backend and privacy protections.</p>
+        </div>
+
+        <div class="contact">
+          <div class="contact__card">
+            <h3>About</h3>
+            <p class="muted">Lost & Found demo — separate Listings and Forum pages are available via the header links.</p>
+          </div>
+
+          <div class="contact__form" style="padding:18px;">
+            <h3>Administrator</h3>
+            <p class="muted">Replace with real contact for your community site.</p>
+            <p>Email: <a class="contact__link" href="mailto:admin@example.com">admin@example.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Lost & Found</span>
+      <span class="muted">Community-driven demo</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

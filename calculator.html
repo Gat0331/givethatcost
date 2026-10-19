@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ingredient Cost Calculator — Lost &amp; Found</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__initial">LF</span>
+        <span class="brand__text">Lost &amp; Found</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          Menu
+        </button>
+        <div id="nav-menu" class="nav-menu" data-open="false">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="listings.html" class="nav-link">Listings</a>
+          <a href="forum.html" class="nav-link">Forum</a>
+          <a href="calculator.html" class="nav-link" aria-current="page">Calculator</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="calculator-main">
+    <div class="container calculator-workspace">
+      <header class="calculator-intro">
+        <p class="calculator-kicker">Small-batch workbench <span aria-hidden="true">/</span> 01</p>
+        <h1>Know what every batch <em>really</em> costs.</h1>
+        <p>Price your ingredients, set a yield, and see what’s left when the batch is sold.</p>
+      </header>
+
+      <section class="calculator-panel ingredients-panel" aria-labelledby="ingredients-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-index">01 <span>—</span> Ingredients</p>
+            <h2 id="ingredients-heading">Build your batch</h2>
+          </div>
+          <p class="panel-hint">Use the same unit for each quantity and its unit cost.</p>
+        </div>
+
+        <div class="ingredient-table-wrap">
+          <table class="ingredient-table">
+            <thead>
+              <tr>
+                <th scope="col">Ingredient</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Unit</th>
+                <th scope="col">Cost / unit ($)</th>
+                <th scope="col" class="line-total-heading">Line total</th>
+                <th scope="col"><span class="visually-hidden">Remove</span></th>
+              </tr>
+            </thead>
+            <tbody id="ingredient-rows"></tbody>
+          </table>
+        </div>
+
+        <div id="ingredient-status" class="ingredient-status" aria-live="polite"></div>
+        <div class="ingredient-controls">
+          <button class="calculator-add" id="add-ingredient" type="button">
+            <span aria-hidden="true">＋</span> Add ingredient
+          </button>
+          <p class="batch-total">Total ingredient cost <strong id="batch-total">$0.00</strong></p>
+        </div>
+      </section>
+
+      <section class="calculator-lower" aria-label="Production and earnings">
+        <div class="calculator-panel production-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-index">02 <span>—</span> Production</p>
+              <h2>Set your batch size</h2>
+            </div>
+          </div>
+          <div class="production-fields">
+            <label class="calculator-field" for="batch-yield">
+              <span>Sellable items per batch</span>
+              <input id="batch-yield" name="batch-yield" type="number" min="1" step="1" value="12" inputmode="numeric" required />
+              <small>Count only items you can sell.</small>
+            </label>
+            <label class="calculator-field" for="selling-price">
+              <span>Selling price per item</span>
+              <div class="currency-input">
+                <span aria-hidden="true">$</span>
+                <input id="selling-price" name="selling-price" type="number" min="0" step="0.01" value="4.50" inputmode="decimal" required />
+              </div>
+              <small>Your planned price before other expenses.</small>
+            </label>
+          </div>
+        </div>
+
+        <section class="earnings-panel" aria-labelledby="earnings-heading">
+          <div class="earnings-heading">
+            <p class="panel-index">03 <span>—</span> The numbers</p>
+            <h2 id="earnings-heading">Your batch, broken down.</h2>
+          </div>
+          <div id="calculation-message" class="calculation-message" role="status" aria-live="polite"></div>
+          <div class="earnings-grid" id="earnings-results" aria-live="polite" aria-atomic="true">
+            <div class="earning earning--per-item">
+              <span class="earning-label">Gross profit / item</span>
+              <strong id="profit-per-item">—</strong>
+              <span class="earning-caption">Selling price less ingredient cost</span>
+            </div>
+            <div class="earning earning--batch">
+              <span class="earning-label">Gross profit / batch</span>
+              <strong id="profit-per-batch">—</strong>
+              <span class="earning-caption">Profit across all sellable items</span>
+            </div>
+            <div class="earning">
+              <span class="earning-label">Cost per item</span>
+              <strong id="cost-per-item">—</strong>
+            </div>
+            <div class="earning">
+              <span class="earning-label">Expected batch revenue</span>
+              <strong id="batch-revenue">—</strong>
+            </div>
+            <div class="earning">
+              <span class="earning-label">Gross margin</span>
+              <strong id="gross-margin">—</strong>
+            </div>
+          </div>
+          <p class="earnings-note">Gross profit is expected revenue minus ingredient cost. It doesn’t include labor, packaging, or other overhead.</p>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Lost &amp; Found</span>
+      <span class="muted">Community-driven demo</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="calculator.js"></script>
+</body>
+</html>
