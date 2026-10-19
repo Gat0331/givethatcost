@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ingredient Cost Calculator — Lost &amp; Found</title>
+  <title>Ingredient Cost Calculator | Batch Costing</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,22 +11,10 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="brand__initial">LF</span>
-        <span class="brand__text">Lost &amp; Found</span>
-      </a>
-
-      <nav aria-label="Primary">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
-          Menu
-        </button>
-        <div id="nav-menu" class="nav-menu" data-open="false">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="listings.html" class="nav-link">Listings</a>
-          <a href="forum.html" class="nav-link">Forum</a>
-          <a href="calculator.html" class="nav-link" aria-current="page">Calculator</a>
-        </div>
-      </nav>
+      <div class="brand" aria-label="Batch Costing">
+        <span class="brand__initial" aria-hidden="true">BC</span>
+        <span class="brand__text">Batch Costing</span>
+      </div>
     </div>
   </header>
 
@@ -135,8 +123,8 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Lost &amp; Found</span>
-      <span class="muted">Community-driven demo</span>
+      <span>© <span id="year"></span> Batch Costing</span>
+      <span class="muted">Ingredient costing in Philippine pesos (PHP)</span>
     </div>
   </footer>
 

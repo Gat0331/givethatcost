@@ -85,29 +85,6 @@ body{
 }
 .brand__text{letter-spacing:.2px;}
 
-.nav-toggle{
-  display:none;
-  background:transparent;
-  color:var(--text);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:10px 12px;
-}
-
-.nav-menu{
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
-.nav-link{
-  color:var(--muted);
-  text-decoration:none;
-  padding:10px 10px;
-  border-radius:12px;
-}
-.nav-link:hover{color:var(--text); background: rgba(231,238,252,.06);}
-.nav-link[aria-current="page"]{color:var(--text); background:rgba(231,238,252,.09);}
-
 .hero{
   padding: 56px 0 28px;
 }
@@ -311,57 +288,14 @@ textarea{resize: vertical;}
 }
 .footer-inner{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
 
-/* Listings and forum specific styles */
-.category-buttons{display:flex; gap:10px; margin: 12px 0 18px; flex-wrap:wrap;}
-.listings-grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
-.listing-card{
-  padding:14px; border-radius:12px; background: rgba(231,238,252,.03); border:1px solid rgba(231,238,252,.06);
-}
-.listing-type{font-weight:700; font-size:13px; padding:6px 8px; border-radius:8px; display:inline-block; margin-bottom:8px;}
-.listing-title{font-size:16px; margin:6px 0 8px;}
-.listing-desc{color:var(--muted); margin-bottom:8px;}
-.listing-contact{color:var(--muted); font-size:13px;}
-
-.forum{display:grid; grid-template-columns: 1fr 1.1fr; gap:18px; align-items:start;}
-.forum-list{display:flex; flex-direction:column; gap:12px;}
-.forum-post{padding:14px; border-radius:12px; background: rgba(231,238,252,.03); border:1px solid rgba(231,238,252,.06);}
-.post-header{display:flex; justify-content:space-between; gap:12px; align-items:center;}
-.post-title{font-weight:700;}
-.post-body{color:var(--muted); margin:8px 0;}
-.post-contact{font-size:13px; color:var(--muted);}
-.comment-list{margin-top:10px; padding-top:10px; border-top:1px dashed rgba(231,238,252,.04);}
-.comment{margin:8px 0; color:var(--muted);}
-.comment-form{margin-top:10px; display:flex; gap:8px;}
-.comment-form input{flex:1}
-
 @media (max-width: 920px){
   .hero-grid{grid-template-columns: 1fr;}
   .grid{grid-template-columns: 1fr;}
   .contact{grid-template-columns: 1fr;}
   .resume{flex-direction:column; align-items:flex-start;}
-  .listings-grid{grid-template-columns: repeat(2,1fr);}
-  .forum{grid-template-columns: 1fr;}
 }
 
 @media (max-width: 560px){
-  .nav-toggle{display:inline-flex;}
-  .nav-menu{
-    position:absolute;
-    right: 16px;
-    top: 66px;
-    flex-direction:column;
-    align-items:flex-start;
-    gap: 8px;
-    padding: 12px;
-    border-radius: 16px;
-    background: rgba(11,18,32,.95);
-    border: 1px solid rgba(231,238,252,.12);
-    box-shadow: var(--shadow);
-    display:none;
-  }
-  .nav-menu[data-open="true"]{display:flex;}
-  .nav{position:relative;}
-  .listings-grid{grid-template-columns:1fr;}
 }
 
 /* Ingredient costing calculator */
