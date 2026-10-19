@@ -54,7 +54,7 @@
                 <th scope="col">Ingredient</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Unit</th>
-                <th scope="col">Cost / unit ($)</th>
+                <th scope="col">Cost / unit (₱)</th>
                 <th scope="col" class="line-total-heading">Line total</th>
                 <th scope="col"><span class="visually-hidden">Remove</span></th>
               </tr>
@@ -68,7 +68,7 @@
           <button class="calculator-add" id="add-ingredient" type="button">
             <span aria-hidden="true">＋</span> Add ingredient
           </button>
-          <p class="batch-total">Total ingredient cost <strong id="batch-total">$0.00</strong></p>
+          <p class="batch-total">Total ingredient cost <strong id="batch-total">₱0.00</strong></p>
         </div>
       </section>
 
@@ -87,10 +87,10 @@
               <small>Count only items you can sell.</small>
             </label>
             <label class="calculator-field" for="selling-price">
-              <span>Selling price per item</span>
+              <span>Selling price per item (₱)</span>
               <div class="currency-input">
-                <span aria-hidden="true">$</span>
-                <input id="selling-price" name="selling-price" type="number" min="0" step="0.01" value="4.50" inputmode="decimal" required />
+                <span aria-hidden="true">₱</span>
+                <input id="selling-price" name="selling-price" type="number" min="0" step="0.01" value="45.00" inputmode="decimal" required />
               </div>
               <small>Your planned price before other expenses.</small>
             </label>

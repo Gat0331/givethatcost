@@ -5,16 +5,16 @@ const batchTotalOutput = document.getElementById('batch-total');
 const ingredientStatus = document.getElementById('ingredient-status');
 const calculationMessage = document.getElementById('calculation-message');
 
-const currency = new Intl.NumberFormat('en-US', {
+const currency = new Intl.NumberFormat('en-PH', {
   style: 'currency',
-  currency: 'USD'
+  currency: 'PHP'
 });
 
 const sampleIngredients = [
-  { name: 'Bread flour', quantity: '1.2', unit: 'kg', cost: '2.40' },
-  { name: 'Unsalted butter', quantity: '0.25', unit: 'kg', cost: '8.80' },
-  { name: 'Brown sugar', quantity: '0.18', unit: 'kg', cost: '3.60' },
-  { name: 'Eggs', quantity: '3', unit: 'each', cost: '0.38' }
+  { name: 'Bread flour', quantity: '1.2', unit: 'kg', cost: '60.00' },
+  { name: 'Unsalted butter', quantity: '0.25', unit: 'kg', cost: '400.00' },
+  { name: 'Brown sugar', quantity: '0.18', unit: 'kg', cost: '165.00' },
+  { name: 'Eggs', quantity: '3', unit: 'each', cost: '16.00' }
 ];
 
 function formatMoney(value) {
@@ -78,7 +78,7 @@ function addIngredient(ingredient = { name: '', quantity: '', unit: 'kg', cost: 
   unitSelect.addEventListener('change', updateCalculations);
   appendCell(row, unitSelect);
 
-  const costInput = createField('number', `${accessibleName} cost per unit in dollars`, ingredient.cost, { step: 'any' });
+  const costInput = createField('number', `${accessibleName} cost per unit in Philippine pesos`, ingredient.cost, { step: 'any' });
   costInput.className = 'ingredient-cost';
   appendCell(row, costInput);
 
@@ -101,7 +101,7 @@ function addIngredient(ingredient = { name: '', quantity: '', unit: 'kg', cost: 
     const currentName = nameInput.value.trim() || 'Ingredient';
     quantityInput.setAttribute('aria-label', `${currentName} amount`);
     unitSelect.setAttribute('aria-label', `${currentName} unit`);
-    costInput.setAttribute('aria-label', `${currentName} cost per unit in dollars`);
+    costInput.setAttribute('aria-label', `${currentName} cost per unit in Philippine pesos`);
     removeButton.setAttribute('aria-label', `Remove ${currentName}`);
   });
   updateCalculations();
@@ -166,7 +166,7 @@ function updateCalculations() {
   } else if (!hasYield) {
     calculationMessage.textContent = 'Enter a whole-number yield of at least 1 item to calculate per-item costs and profit.';
   } else if (!hasPrice) {
-    calculationMessage.textContent = 'Enter a valid selling price of $0 or more to calculate revenue and profit.';
+    calculationMessage.textContent = 'Enter a valid selling price of ₱0 or more to calculate revenue and profit.';
   } else {
     const costPerItem = totalCost / yieldValue;
     const revenue = price * yieldValue;
@@ -180,7 +180,7 @@ function updateCalculations() {
     results['batch-revenue'] = formatMoney(revenue);
     results['gross-margin'] = grossMargin === null ? '—' : `${grossMargin.toFixed(1)}%`;
     calculationMessage.textContent = revenue === 0
-      ? 'At a $0.00 selling price, expected revenue is $0.00; gross margin is not defined.'
+      ? 'At a ₱0.00 selling price, expected revenue is ₱0.00; gross margin is not defined.'
       : '';
   }
 

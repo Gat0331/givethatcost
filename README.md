@@ -12,13 +12,14 @@ This is a lightweight, responsive portfolio built with **plain HTML, CSS, and a 
 
 ## How to use
 1. Open `index.html` in your browser.
-2. Update placeholders:
+2. Open `calculator.html` to estimate ingredient costs, batch revenue, and gross profit in Philippine pesos (PHP).
+3. Update placeholders:
    - Name: `index.html` (brand + hero)
    - Projects: replace titles/descriptions/tech bullets
    - Links: set real URLs for GitHub/Live Demo
    - Resume: update the `href` of the “Resume PDF” button
    - Contact email: update `mailto:you@example.com`
-3. When you’re ready to publish, upload the folder to GitHub Pages / your host.
+4. When you’re ready to publish, upload the folder to GitHub Pages / your host.
 
 ## Publish with GitHub Pages
 This project is a static site and does not need a build step. To publish it at a shareable URL:
